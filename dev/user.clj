@@ -1,5 +1,5 @@
 (ns user
-  (:require [clojure.pprint :refer [pprint]]
+  (:require [clojure.pprint :refer [pprint pp]]
             [clojure.repl :refer :all]
             [clojure.tools.namespace.repl :refer  [refresh]]
             [clojure.spec.alpha :as s]
@@ -7,6 +7,7 @@
             [clojure.spec.test.alpha :as stest]
             [clojure.test.check :as tc]
             [orchestra.spec.test :as o]
-            [xenome.core :as x]))
+            [xenome.core :as x]
+            [xenome.spec :as xs]))
 
 (o/instrument)
