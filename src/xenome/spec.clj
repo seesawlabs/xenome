@@ -67,9 +67,9 @@
 (s/def ::enabled? boolean?)
 (s/def ::edge-data (s/keys :req-un [::weight ::innovation ::enabled?]))
 (s/def ::edges (s/map-of ::edge ::edge-data))
-(s/def ::node-count pos-int?)
-(s/def ::input-count ::node-count)
-(s/def ::output-count ::node-count)
+(s/def ::node-count nat-int?)
+(s/def ::input-count pos-int?)
+(s/def ::output-count pos-int?)
 (s/def ::xenome (s/with-gen (s/and (s/keys :req-un [::nodes
                                                     ::edges
                                                     ::input-count
