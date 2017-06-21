@@ -8,6 +8,37 @@ Clojure implementation of the [NEAT algorithm](http://nn.cs.utexas.edu/downloads
 
 FIXME
 
+## Development
+
+Refresh all namespaces in dependency order:
+
+```Clojure
+; At the REPL
+(refresh)
+```
+
+All `xenome` namespaces are available from the `user` namespace by their alias:
+
+```Clojure
+; xenome.core/some-fn
+(x/some-fn)
+
+; clojure.spec.gen.alpha/some-fn
+(gen/some-fn)
+```
+
+Check the [user.clj](./dev/user.clj) file for a list of aliases available.
+
+Auto run the tests upon file change:
+
+```
+lein auto test
+```
+
+The `user` namespace automatically calls `(o/instrument)`. Any defined specs will be
+instrumented while working at the REPL. Note that the `user` namespace is _not_ loaded
+in production builds; it is a development dependency only.
+
 ## License
 
 Copyright © 2017 SeeSaw Labs
