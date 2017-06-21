@@ -31,10 +31,11 @@
   valid input/output counts for those nodes."
   [nodes]
   (gen/fmap (fn [nodes]
-              (let [end (-> (count nodes)
-                            (/ 2)
-                            int)]
-                (inc (rand-int end))))
+              (-> (count nodes)
+                  (/ 2)
+                  int
+                  rand-int
+                  inc))
             (gen/return nodes)))
 
 (defn xenome-gen

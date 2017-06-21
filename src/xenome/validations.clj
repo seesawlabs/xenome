@@ -1,20 +1,20 @@
 (ns xenome.validations
   "Functions that validate xenomes."
-  (:require [clojure.set :as cset]))
+  (:require [clojure.set :refer [subset?]]))
 
 (defn edges-are-a-subset-of-nodes?
-  "Checks that for every node within :edges, the node exists
-  in :nodes."
+  "Checks that for all edge in :edges, the nodes that make
+  up that edge exist in :nodes."
   [x]
-  (cset/subset? (into #{} (apply concat (keys (:edges x))))
-                (:nodes x)))
+  (subset? (into #{} (apply concat (keys (:edges x))))
+           (:nodes x)))
 
 (defn sum-in-out-count-lte-node-count?
   "Checks that the sum of the input and output counts are less
   than or equal to the node count."
-  [x]
-  (<= (+ (:input-count x) (:output-count x))
-      (count (:nodes x))))
+  [{:keys [input-count output-count nodes]}]
+  (<= (+ input-count output-count)
+      (count nodes)))
 
 (defn innovations-are-distinct?
   "Checks that all innovation numbers are distinct within a
