@@ -1,5 +1,7 @@
 # xenome
 
+[![Build Status](https://travis-ci.org/seesawlabs/xenome.svg?branch=master)](https://travis-ci.org/seesawlabs/xenome)
+
 Clojure implementation of the [NEAT algorithm](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf).
 
 ## Usage
