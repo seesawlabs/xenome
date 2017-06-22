@@ -62,6 +62,7 @@
 (s/def ::source-node ::node)
 (s/def ::target-node ::node)
 (s/def ::edge (s/tuple ::source-node ::target-node))
+(s/def ::edge-set (s/coll-of ::edge :kind set? :into #{}))
 (s/def ::weight (s/double-in :NaN? false))
 (s/def ::innovation pos-int?)
 (s/def ::enabled? boolean?)

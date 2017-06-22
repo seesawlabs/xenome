@@ -8,6 +8,8 @@
             [clojure.test.check :as tc]
             [orchestra.spec.test :as o]
             [xenome.core :as x]
-            [xenome.spec :as xs]))
+            [xenome.spec :as xs]
+            [xenome.graph :as xg]
+            [xenome.neural :as xn]))
 
 (o/instrument)
